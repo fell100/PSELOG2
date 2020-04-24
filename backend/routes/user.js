@@ -22,7 +22,7 @@ router.route('/login').post(async (req, res) => {
     //const user = User.find(user => user.username === req.body.username)
     const user = await User.findOne({username: req.body.username})
    
-    if(user == null) {
+    if(!user) {
         return res.status(400).send('User not found')
     }
     try{
