@@ -2,11 +2,6 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 let User = require('../models/user.model');
 
-router.route('/').get((req, res) => {
-    User.find()
-        .then(users => res.json(users))
-        .catch(err => res.status(400).json('Error: ' + err));
-});
 
 router.route('/add').post(async (req, res) => {
         const salt = await bcrypt.genSalt()
@@ -24,7 +19,23 @@ router.route('/add').post(async (req, res) => {
 }); 
 
 router.route('/login').post(async (req, res) => {
-    const user = User.find(User => User.username === req.body.username)
+    //const user = User.find(user => user.username === req.body.username)
+    const user = await User.findOne({username: req.body.username})
+   
+    if(user == null) {
+        return res.status(400).send('User not found')
+    }
+    try{
+        if(await bcrypt.compare(req.body.password, user.password)){
+            res.send("Welcome")
+        } else {
+            res.send("You shall not pass")
+        }
+    } catch {
+        res.status(500).send()
+    }
+
+    
 })
 
 
