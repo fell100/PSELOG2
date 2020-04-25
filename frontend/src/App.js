@@ -1,14 +1,11 @@
-import React,{ Component } from "react";
+import React from 'react';
+import Login from './pages/Login';
+import './global.css';
 
-import Header from './components/Header';
-
-import "./styles.css";
-import Main from './pages/main';
-
-const App = () => (
-  <div className="App">
-    <Header />
-  </div>
-);
+function App (){
+    return(
+        <Login/> 
+    );
+}
 
 export default App;
