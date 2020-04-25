@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Righteous&display=swap');
 .login-container{
     width:100%;
     max-width: 1120px;
@@ -23,9 +24,10 @@
 .login-container section.form form a{
     display: flex;
     align-items: center;
-    margin-top: 40px;
-    margin-left: 105px;
+    margin-top: 25px;
+    margin-left: 95px;
     color:#41414d;
+    font-family: 'Righteous', cursive;;
     font-size: 20px;
     text-decoration: none;
     font-weight: 400;
@@ -35,8 +37,36 @@
 .login-container section.form form input{
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    color: #C1C1C1;
+    color: #808080;
+    margin-top:40px;
 }
 
+::placeholder { 
+    color: #D3D3D3;
+    opacity: 1; 
+  }
+
+  .login-container section.form img{ /*gato*/
+    position: relative;
+    left: -20px;
+    top: 63px;
+  }
+
+  .login-container img{ /*Ghibli*/
+    position: relative;
+    right: -140px;
+    top: 70px;
+    
+  }
+
+  .login-container section.form form img{/*Mini Totoro*/
+    position: static;
+    
+  }
+
+  .login-container section.form form button{
+    margin-top:40px;
+    
+  }
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-import sumu from '../../assets/sumu.png';
+import cat from '../../assets/cat.png';
 import totoro from '../../assets/totoro.png';
 import logoImg from '../../assets/Ghibli.svg';
 
@@ -12,7 +12,7 @@ export default function Login (){
         <div className="login-container">
 
             <section className="form">
-            <img src={sumu} alt = "Sumu" />
+            <img src={cat} alt = "Cat" />
 
             <form >
                 
@@ -28,10 +28,9 @@ export default function Login (){
 
             </section>
             
-            <img src={logoImg} alt = "Ghibli"/>
+        
             
         </div>
-    
-        
+     
     );
 }

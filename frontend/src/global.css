@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Gentium+Basic:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Righteous&display=swap');
 *{
     margin:0;
     padding: 0;
@@ -37,10 +38,10 @@ form input{
     border: 1px solid rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
     border-radius: 10px;
-    font-family: 'Gentium Basic', serif;
+    font-family: 'Righteous', cursive;
     font-style: normal;
-    font-weight: 700;
-    font-size: 35px;
+    font-weight: 400;
+    font-size: 30px;
     line-height: 35px;
     color: #927D36;
     margin-top: 16px;
