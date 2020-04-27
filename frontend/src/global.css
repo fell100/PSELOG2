@@ -16,11 +16,7 @@ body{
 }
 
 
-button{
-    cursor: pointer;
-}
-
-form input{
+form input{ /* Global input*/
     width: 100%;
     height: 60px;
     margin-top: 28px;
@@ -29,7 +25,31 @@ form input{
     box-sizing: border-box;
     border-radius: 10px;
     padding: 0 24px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #808080;
+    margin-top:40px;
 }
+
+
+
+::placeholder { 
+    color: #D3D3D3;
+    opacity: 1; 
+  }
+
+  .back-link{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    margin-left: 168px;
+    color:#C5C5C5;
+    font-family: 'Righteous', cursive;;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: opacity 0.2s;
+  }
 
 .button{
     width: 100%;
@@ -44,7 +64,7 @@ form input{
     font-size: 30px;
     line-height: 35px;
     color: #927D36;
-    margin-top: 16px;
+    margin-top: 40px;
     display: inline-block;
     text-align: center;
     text-decoration: none;
@@ -54,3 +74,8 @@ form input{
 .button:hover{
     filter: brightness(90%);
 }
+
+button{
+    cursor: pointer;
+}
+

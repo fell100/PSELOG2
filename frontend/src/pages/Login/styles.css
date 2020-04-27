@@ -21,30 +21,7 @@
     margin-top:20px;
 }
 
-.login-container section.form form a{
-    display: flex;
-    align-items: center;
-    margin-top: 25px;
-    margin-left: 95px;
-    color:#41414d;
-    font-family: 'Righteous', cursive;;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: 400;
-    transition: opacity 0.2s;
-}
 
-.login-container section.form form input{
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    color: #808080;
-    margin-top:40px;
-}
-
-::placeholder { 
-    color: #D3D3D3;
-    opacity: 1; 
-  }
 
   .login-container section.form img{ /*gato*/
     position: relative;
@@ -59,14 +36,7 @@
     
   }
 
-  .login-container section.form form img{/*Mini Totoro*/
-    position: static;
-    
-  }
 
-  .login-container section.form form button{
-    margin-top:40px;
-    
-  }
+  
 
 

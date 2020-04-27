@@ -1,10 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import './styles.css';
 
 import cat from '../../assets/cat.png';
-import totoro from '../../assets/totoro.png';
-import logoImg from '../../assets/Ghibli.svg';
+
 
 export default function Login (){
     return(
@@ -17,13 +17,13 @@ export default function Login (){
             <form >
                 
                 <input placeholder= "Usuario" />
-                <input placeholder= "Senha" />
+                <input type="password" id="pass" placeholder= "Senha"/>
                 <button className="button" type="submit">Entrar</button>
 
-                <a href="/register">
-                <img src={totoro} alt = "Totoro"/>
+                <Link className="back-link" to="/register">
+                
                     Não tem cadastro?
-                </a>
+                </Link>
             </form>
 
             </section>
