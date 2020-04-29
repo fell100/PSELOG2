@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {FiArrowLeft} from 'react-icons/fi';
 import './styles.css';
 import logoImg from '../../assets/Ghibli.svg';
 
@@ -13,8 +14,8 @@ export default function Register(){
             <img src={logoImg} alt = "Ghibli" id="G"/>
            
             <Link className="back-link" to="/">
-               
-                    Voltar para login
+                <FiArrowLeft size={25} color="#C5C5C5"/> 
+                Voltar para login
                 </Link>
             </section>
 

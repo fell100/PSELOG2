@@ -39,3 +39,8 @@
     left: -125px;
     top: -80px;
   }
+
+  .back-link svg{
+    margin-right: 9px;
+  
+  }

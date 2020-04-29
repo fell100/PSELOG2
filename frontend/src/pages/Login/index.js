@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import {FiArrowRight} from 'react-icons/fi';
 import './styles.css';
 
 import cat from '../../assets/cat.png';
@@ -21,8 +21,9 @@ export default function Login (){
                 <button className="button" type="submit">Entrar</button>
 
                 <Link className="back-link" to="/register">
-                
+                <FiArrowRight size={25} color="#C5C5C5"/> 
                     Não tem cadastro?
+                    
                 </Link>
             </form>
 

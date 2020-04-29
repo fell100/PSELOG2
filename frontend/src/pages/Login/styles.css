@@ -23,18 +23,24 @@
 
 
 
-  .login-container section.form img{ /*gato*/
+.back-link svg{
+  margin-right: 9px;
+
+}
+
+.login-container section.form img{ /*gato*/
     position: relative;
     left: -20px;
     top: 63px;
-  }
+}
 
-  .login-container img{ /*Ghibli*/
+.login-container img{ /*Ghibli*/
     position: relative;
     right: -140px;
     top: 70px;
     
-  }
+ }
+
 
 
   

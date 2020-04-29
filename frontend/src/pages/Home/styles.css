@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+.home-container{
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 30px;
+    margin: 32px auto;
+
+
+}
+
+.home-container header{
+   align-items: center; 
+   height: 60px;
+   border-radius: 10px;
+   padding: 0 24px;
+   background:#DCD3B3;;
+   box-sizing: border-box;
+}
+
+.home-container header span{
+    font-family: 'Questrial', sans-serif;
+    font-size: 25px;
+    text-align: left;
+    margin-left: 24px;
+    margin-bottom: 14px;
+    line-height: 55px;
+
+}
+
+.home-container  p{
+    width: 1000px;
+    height: 70px;
+    background:#DCD3B3;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+    line-height: 35px;
+    color: #000;
+    margin-top: 40px;
+    display: inline-block;
+    text-align: justify;
+    text-decoration: none;
+    text-indent: 50px;
+   
+}
+
+.home-container  img{ 
+    position: relative;
+    left: 930px;
+    top: -130px;
+}
+
+.home-container input{
+    width: 400px;
+    height: 40px;
+    position: relative;
+    left: -313px;
+    bottom: 200px;
+    background: #ECECEC;
+    border: 1px solid #ECECEC;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 0 24px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #808080;
+    
+}
+
+.home-container button{
+    position: relative;
+    top: -194px;
+    left: 120px;
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+
+
