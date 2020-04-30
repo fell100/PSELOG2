@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import {FiArrowRight} from 'react-icons/fi';
 import './styles.css';
 import api from '../../services/api';
-
 import cat from '../../assets/cat.png';
 
 
@@ -20,13 +19,13 @@ export default function Login (){
                 username: name,
                 password: password
             }
-            const response = await api.post('/user/login',credentials);
-
+            const response = await api.post('user/login',credentials);
             console.log(response.data.username);
         } catch(err){
             alert('Falha no login');
         }
     }
+    
     console.log('Olá');
     return(
         

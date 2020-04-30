@@ -11,6 +11,7 @@ router.route('/add').post(async (req, res) => {
         const newUser = new User({
             username,
             password,
+            email
         })
         
         newUser.save()
