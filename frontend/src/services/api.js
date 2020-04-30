@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: "https://ghibliapi.herokuapp.com",
+    baseURL: "http://localhost:6969",
 })
 
 export default api;

@@ -27,15 +27,15 @@
 
 }
 
-.home-container  p{
+#paragrafo{
     width: 1000px;
     height: 70px;
+    padding: 1%;
     background:#DCD3B3;
     box-sizing: border-box;
     border-radius: 10px;
     font-family: 'Questrial', sans-serif;
     font-size: 20px;
-    line-height: 35px;
     color: #000;
     margin-top: 40px;
     display: inline-block;
@@ -45,18 +45,27 @@
    
 }
 
-.home-container  img{ 
+#mono{ 
     position: relative;
-    left: 930px;
+    left: 350px;
     top: -130px;
 }
 
-.home-container input{
+#together{
+    display: flex;
+}
+
+#juntos{
+    width: 50%;
+    height: 80px;
+    max-width: 1180px;
+    margin-top: 40px;
+    
+}
+
+.home-container #juntos input{
     width: 400px;
     height: 40px;
-    position: relative;
-    left: -313px;
-    bottom: 200px;
     background: #ECECEC;
     border: 1px solid #ECECEC;
     box-sizing: border-box;
@@ -68,12 +77,34 @@
     
 }
 
-.home-container button{
+.home-container #juntos button{
+    padding: 0 10px;
     position: relative;
-    top: -194px;
-    left: 120px;
+    top: 5px;
     background: #fff;
     border: 1px solid #fff;
+}
+
+#visible{
+    width: 50%;
+    padding:1%;
+    position: relative;
+    bottom: 160px;
+    left: 560px;
+    background: #EDE1B7;
+    border: 1px solid #EDE1B7;
+}
+
+ul{
+    list-style-type: none;
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+    color: #000;
+    text-align: justify; 
+}
+
+li{
+    margin-top:5px;
 }
 
 
