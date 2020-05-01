@@ -14,6 +14,8 @@ export default function Home(){
     const [producer, setProducer] = useState('');
     const [release, setRelease] = useState('');
 
+    const userName = localStorage.getItem('userName');
+
     async function handleHome(){
         const res = await api.get('https://ghibliapi.herokuapp.com/films');
         const filmes = res.data;
@@ -32,7 +34,7 @@ export default function Home(){
     return(
         <div className="home-container">
             <header>
-                <span>Bem vindo(a),</span>
+             <span>Bem vindo(a),{userName}</span>
             </header>
             <div id='paragrafo'>
                 <p> Nesta aplicação disponibilizamos para você a pesquisa dos filmes do estudio Ghibli. 

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {FiArrowRight} from 'react-icons/fi';
 import './styles.css';
 import api from '../../services/api';
@@ -11,23 +12,32 @@ export default function Login (){
 
     const [name, setName] = useState('');
     const [password, SetPass] = useState('');
+    const history = useHistory()
 
     async function handleLogin(e){
         e.preventDefault();
     
         try{
+            
             const credentials={
                 username: name,
                 password: password
             }
-            const response = await api.post('/user/login',credentials);
+            console.log('Funcione');
 
-            console.log(response.data.username);
+            const response = await api.post('user/login',credentials);
+            
+            localStorage.setItem('userName', name);
+
+            history.push('/home');
+
+            console.log(response);
         } catch(err){
             alert('Falha no login');
         }
     }
-    console.log('Olá');
+
+    
     return(
         
         <div className="login-container">
@@ -47,7 +57,7 @@ export default function Login (){
                 value={password}
                 onChange={e => SetPass(e.target.value)}
                 />
-                <button  className="button" type="submit">Entrar</button>
+                <button className="button" type="submit">Entrar</button>
 
                 <Link className="back-link" to="/register">
                 <FiArrowRight size={25} color="#C5C5C5"/> 
