@@ -25,7 +25,8 @@ export default function Register(){
         }
 
         try{
-            await api.post('user/add', data)
+            const response = await api.post('user/add', data)
+            console.log(response);
             alert('Cadastro feito');
             history.goBack();
         }catch(err){

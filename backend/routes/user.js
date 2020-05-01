@@ -12,7 +12,7 @@ router.route('/add').post(async (req, res) => {
         const newUser = new User({
             username,
             password,
-            email
+            email,
         })
         
         newUser.save()
@@ -31,7 +31,7 @@ router.route('/login').post(async (req, res) => {
         if(await bcrypt.compare(req.body.password, user.password)){
             res.send("Welcome")
         } else {
-            res.send("You shall not pass")
+            res.status(400).send("You shall not pass")
         }
     } catch {
         res.status(500).send()

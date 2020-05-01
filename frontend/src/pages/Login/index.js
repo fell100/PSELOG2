@@ -20,10 +20,11 @@ export default function Login (){
             
             const credentials={
                 username: name,
-                password: password
+                password: password,
             }
 
-            await api.post('user/login',credentials);
+            const response = await api.post('user/login',credentials);
+            console.log(response);
             
             localStorage.setItem('userName', name);
 
