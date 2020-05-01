@@ -13,6 +13,7 @@ export default function Register(){
     const[email,setEmail] = useState('');
     const[password,setPass] = useState('');
     const history = useHistory()
+   
 
 
     async function handleRegister(e){

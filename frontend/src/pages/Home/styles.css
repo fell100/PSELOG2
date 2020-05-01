@@ -27,6 +27,13 @@
 
 }
 
+#logout{
+    background:#DCD3B3;
+    border: 1px solid #DCD3B3;
+    padding-top: 15px;
+    margin-left: 800px;
+}
+
 #paragrafo{
     width: 1000px;
     height: 70px;

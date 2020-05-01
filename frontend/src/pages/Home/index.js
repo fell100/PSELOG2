@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import {FiSearch } from 'react-icons/fi'
+import {FiLogOut} from 'react-icons/fi';
 import api from '../../services/api';
 
 import './styles.css';
@@ -13,6 +15,7 @@ export default function Home(){
     const [director, setDirector] = useState('');
     const [producer, setProducer] = useState('');
     const [release, setRelease] = useState('');
+    const history = useHistory();
 
     const userName = localStorage.getItem('userName');
 
@@ -34,8 +37,13 @@ export default function Home(){
     return(
         <div className="home-container">
             <header>
-             <span>Bem vindo(a),{userName}</span>
+                 <span>Bem vindo(a), {userName}</span>
+
+                 <button id="logout" type="button" onClick={() => history.goBack()}>
+                    <FiLogOut size={25} color="#5F5D57"/>
+                 </button>
             </header>
+
             <div id='paragrafo'>
                 <p> Nesta aplicação disponibilizamos para você a pesquisa dos filmes do estudio Ghibli. 
                     Para dar inicio, basta pesquisar pelo nome e as suas  informações vão aparecer em seguida.</p>
@@ -62,8 +70,6 @@ export default function Home(){
 
             </div>
               
-           
-           
 
             <div id='visible' style={{display:'none'}}>
               <ul>

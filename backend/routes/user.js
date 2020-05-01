@@ -7,10 +7,12 @@ router.route('/add').post(async (req, res) => {
         const salt = await bcrypt.genSalt()
         const password = await bcrypt.hash(req.body.password, salt);
         const username = req.body.username;
+        const email = req.body.email;
 
         const newUser = new User({
             username,
             password,
+            email
         })
         
         newUser.save()

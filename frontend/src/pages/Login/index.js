@@ -4,7 +4,6 @@ import {useHistory} from 'react-router-dom';
 import {FiArrowRight} from 'react-icons/fi';
 import './styles.css';
 import api from '../../services/api';
-
 import cat from '../../assets/cat.png';
 
 
@@ -23,21 +22,18 @@ export default function Login (){
                 username: name,
                 password: password
             }
-            console.log('Funcione');
 
-            const response = await api.post('user/login',credentials);
+            await api.post('user/login',credentials);
             
             localStorage.setItem('userName', name);
 
             history.push('/home');
 
-            console.log(response);
         } catch(err){
             alert('Falha no login');
         }
     }
 
-    
     return(
         
         <div className="login-container">
