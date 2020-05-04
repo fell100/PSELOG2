@@ -27,7 +27,7 @@ export default function Login (){
             console.log(response);
             
             localStorage.setItem('userName', name);
-
+            localStorage.setItem('token', response.data.token)
             history.push('/home');
 
         } catch(err){

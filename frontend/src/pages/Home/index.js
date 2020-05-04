@@ -73,7 +73,7 @@ export default function Home(){
 
             <div id='visible' style={{display:'none'}}>
               <ul>
-                <li><b>Titulo:</b> {title}</li>
+                <li><b>Título:</b> {title}</li>
                 <li><b>Diretor:</b> {director}</li>
                 <li><b>Produtor:</b> {producer}</li>
                 <li><b>Data de lançamento:</b> {release}</li>
