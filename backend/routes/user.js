@@ -14,10 +14,17 @@ router.route('/add').post(async (req, res) => {
             password,
             email,
         })
-        
-        newUser.save()
-            .then(() => res.json('User Added'))
-            .catch(err => res.status(400).json('Error: ' + err))
+
+        const user = await User.findOne({username: req.body.username})
+
+        if(!user){
+            newUser.save()
+                .then(() => res.json('Usuário cadastrado com sucesso'))
+                .catch(err => res.status(400).json('Error: ' + err))
+            
+        } else {
+            res.json("Usuário ja existe!!")
+        }
 }); 
 
 router.route('/login').post(async (req, res) => {

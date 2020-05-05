@@ -9,7 +9,7 @@ import mononoke from '../../assets/mononoke.png';
 
 export default function Home(){
     
-
+    
 
     const [name, setName] = useState('');
     const [title, setTitle] = useState('');
