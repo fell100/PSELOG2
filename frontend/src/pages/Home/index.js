@@ -3,12 +3,14 @@ import {useHistory} from 'react-router-dom';
 import {FiSearch } from 'react-icons/fi'
 import {FiLogOut} from 'react-icons/fi';
 import api from '../../services/api';
-
 import './styles.css';
 import mononoke from '../../assets/mononoke.png';
 
+
 export default function Home(){
     
+
+
     const [name, setName] = useState('');
     const [title, setTitle] = useState('');
     const [description,setDis] = useState('');
