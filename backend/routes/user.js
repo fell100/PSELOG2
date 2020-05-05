@@ -25,10 +25,10 @@ router.route('/add').post(async (req, res) => {
         } else {
             res.json("Usuário ja existe!!")
         }
-}); 
+});
 
 router.route('/login').post(async (req, res) => {
-    //const user = User.find(user => user.username === req.body.username)
+    
     const user = await User.findOne({username: req.body.username})
 
     if(!user) {
@@ -41,7 +41,7 @@ router.route('/login').post(async (req, res) => {
             let generatedToken = jwt.sign(tokenData, 'somepass', {expiresIn: '30m'})
             res.json({ token: generatedToken })
             
-
+            
         } else {
             res.status(400).send("You shall not pass")
         }
@@ -50,6 +50,18 @@ router.route('/login').post(async (req, res) => {
     }
 
     
+})
+
+router.route('/auth').post(async (req, res) => {
+    const newToken = req.body.token
+
+    console.log('pelo menos veio parar aki')
+    jwt.verify(newToken, 'somepass', (err) => {
+        if (err) {
+            res.send("Forbidden")
+        } else res.send("Allowed")
+    })
+   
 })
 
 

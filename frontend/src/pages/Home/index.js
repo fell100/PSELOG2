@@ -12,9 +12,9 @@ import mononoke from '../../assets/mononoke.png';
 
 
 export default function Home(){
-    
-    
 
+    
+    
     const [name, setName] = useState('');
     const [title, setTitle] = useState('');
     const [description,setDis] = useState('');
@@ -28,6 +28,15 @@ export default function Home(){
 
     async function handleHome(){
        try{
+
+        const token = localStorage.getItem(token)
+        await api.post('/user/auth', token).then((authRes) => {
+        if(authRes == "Forbidden") {
+            history.push('/')
+            }
+        }, (error) => console.log(error))
+
+
         const res = await api.get('https://ghibliapi.herokuapp.com/films');
         const filmes = res.data;
 
