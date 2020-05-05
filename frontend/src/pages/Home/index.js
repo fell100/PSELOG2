@@ -2,13 +2,10 @@ import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {FiSearch } from 'react-icons/fi'
 import {FiLogOut} from 'react-icons/fi';
-<<<<<<< HEAD
 import { useAlert } from 'react-alert';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-=======
->>>>>>> b6e7aa14fa7c01b4c281c09a019dd8bc0e987d30
 import api from '../../services/api';
 import './styles.css';
 import mononoke from '../../assets/mononoke.png';

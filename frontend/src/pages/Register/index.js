@@ -28,18 +28,9 @@ export default function Register(){
 
         try{
             const response = await api.post('user/add', data)
-<<<<<<< HEAD
             
-            alert(response.data);
+            alert.show(response.data);
             history.goBack();
-=======
-            console.log(response);
-            alert.show('Cadastro feito',{
-                onClose: () => {
-                    history.push('/home')
-                }
-            })   
->>>>>>> ac8c466a322443cb8300c5b04d07024b32c686ca
         }catch(err){
             alert.show('Erro no cadastro, tente novamente');
         }
