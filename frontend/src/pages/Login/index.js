@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import {FiArrowRight} from 'react-icons/fi';
+import { useAlert } from 'react-alert';
 import './styles.css';
 import api from '../../services/api';
 import cat from '../../assets/cat.png';
@@ -11,7 +12,8 @@ export default function Login (){
 
     const [name, setName] = useState('');
     const [password, SetPass] = useState('');
-    const history = useHistory()
+    const history = useHistory();
+    const alert = useAlert();
 
     async function handleLogin(e){
         e.preventDefault();
@@ -31,7 +33,7 @@ export default function Login (){
             history.push('/home');
 
         } catch(err){
-            alert('Falha no login');
+            alert.show('Tente novamente: falha no login');
         }
     }
 

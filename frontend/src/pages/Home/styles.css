@@ -13,7 +13,7 @@
    height: 60px;
    border-radius: 10px;
    padding: 0 24px;
-   background:#DCD3B3;;
+   background:rgb(163, 163, 163);;
    box-sizing: border-box;
 }
 
@@ -58,19 +58,28 @@
     top: -130px;
 }
 
-#together{
+#visible{
+    width: 50%;
+    padding:1%;
+    position: relative;
+    bottom: 160px;
+    left: 560px;
+    background: #EDE1B7;
+    border: 1px solid #EDE1B7;
+}
+
+#search{
     display: flex;
 }
 
-#juntos{
+#search-box{
     width: 50%;
     height: 80px;
     max-width: 1180px;
-    margin-top: 40px;
-    
+    margin-top: 40px;  
 }
 
-.home-container #juntos input{
+.home-container #search-box input{
     width: 400px;
     height: 40px;
     background: #ECECEC;
@@ -84,22 +93,12 @@
     
 }
 
-.home-container #juntos button{
+.home-container #search-box button{
     padding: 0 10px;
     position: relative;
     top: 5px;
     background: #fff;
     border: 1px solid #fff;
-}
-
-#visible{
-    width: 50%;
-    padding:1%;
-    position: relative;
-    bottom: 160px;
-    left: 560px;
-    background: #EDE1B7;
-    border: 1px solid #EDE1B7;
 }
 
 ul{

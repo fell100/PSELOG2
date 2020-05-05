@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
+import { useAlert } from 'react-alert';
 import './styles.css';
 import logoImg from '../../assets/Ghibli.svg';
 import api from '../../services/api';
@@ -12,7 +13,8 @@ export default function Register(){
     const[username,setUser] = useState('');
     const[email,setEmail] = useState('');
     const[password,setPass] = useState('');
-    const history = useHistory()
+    const history = useHistory();
+    const alert = useAlert();
    
 
 
@@ -27,10 +29,13 @@ export default function Register(){
         try{
             const response = await api.post('user/add', data)
             console.log(response);
-            alert('Cadastro feito');
-            history.goBack();
+            alert.show('Cadastro feito',{
+                onClose: () => {
+                    history.push('/home')
+                }
+            })   
         }catch(err){
-            alert('Erro no cadastro, tente novamente');
+            alert.show('Erro no cadastro, tente novamente');
         }
     }
     return (
