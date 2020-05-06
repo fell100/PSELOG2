@@ -6,11 +6,9 @@ import { transitions, positions, Provider as AlertProvider, types } from 'react-
 import AlertMUITemplate from 'react-alert-template-mui'
 
 const options = {
-    // you can also just use 'bottom center'
     position: positions.TOP,
     offset: '30px',
     type: types.SUCCESS,
-    // you can also just use 'scale'
     transition: transitions.SCALE,
   }
 

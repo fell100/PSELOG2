@@ -16,8 +16,6 @@ export default function Register(){
     const history = useHistory();
     const alert = useAlert();
    
-
-
     async function handleRegister(e){
         e.preventDefault();
         const data={
@@ -38,6 +36,7 @@ export default function Register(){
             alert.show('Erro no cadastro, tente novamente');
         }
     }
+    
     return (
         <div className="register-container">
 
