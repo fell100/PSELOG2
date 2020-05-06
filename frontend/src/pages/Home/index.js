@@ -5,12 +5,21 @@ import {FiLogOut} from 'react-icons/fi';
 import { useAlert } from 'react-alert';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css';
+<<<<<<< HEAD
+=======
+
+>>>>>>> f309b4ef163001ae6b97febd7e9274da289a5cac
 import api from '../../services/api';
 import './styles.css';
 import mononoke from '../../assets/mononoke.png';
 
 
 export default function Home(){
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> f309b4ef163001ae6b97febd7e9274da289a5cac
     
     const [name, setName] = useState('');
     const [title, setTitle] = useState('');
@@ -28,6 +37,15 @@ export default function Home(){
 
     async function handleHome(){
        try{
+
+        const token = localStorage.getItem(token)
+        await api.post('/user/auth', token).then((authRes) => {
+        if(authRes == "Forbidden") {
+            history.push('/')
+            }
+        }, (error) => console.log(error))
+
+
         const res = await api.get('https://ghibliapi.herokuapp.com/films');
         const filmes = res.data;
 

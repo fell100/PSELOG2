@@ -14,14 +14,21 @@ router.route('/add').post(async (req, res) => {
             password,
             email,
         })
-        
-        newUser.save()
-            .then(() => res.json('User Added'))
-            .catch(err => res.status(400).json('Error: ' + err))
-}); 
+
+        const user = await User.findOne({username: req.body.username})
+
+        if(!user){
+            newUser.save()
+                .then(() => res.json('Usuário cadastrado com sucesso'))
+                .catch(err => res.status(400).json('Error: ' + err))
+            
+        } else {
+            res.json("Usuário ja existe!!")
+        }
+});
 
 router.route('/login').post(async (req, res) => {
-    //const user = User.find(user => user.username === req.body.username)
+    
     const user = await User.findOne({username: req.body.username})
     console.log(user);
     if(!user) {
@@ -34,7 +41,7 @@ router.route('/login').post(async (req, res) => {
             let generatedToken = jwt.sign(tokenData, 'somepass', {expiresIn: '30m'})
             res.json({ token: generatedToken })
             
-
+            
         } else {
             res.status(400).send("You shall not pass")
         }
@@ -43,6 +50,18 @@ router.route('/login').post(async (req, res) => {
     }
 
     
+})
+
+router.route('/auth').post(async (req, res) => {
+    const newToken = req.body.token
+
+    console.log('pelo menos veio parar aki')
+    jwt.verify(newToken, 'somepass', (err) => {
+        if (err) {
+            res.send("Forbidden")
+        } else res.send("Allowed")
+    })
+   
 })
 
 
