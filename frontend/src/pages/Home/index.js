@@ -5,21 +5,13 @@ import {FiLogOut} from 'react-icons/fi';
 import { useAlert } from 'react-alert';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css';
-<<<<<<< HEAD
-=======
 
->>>>>>> f309b4ef163001ae6b97febd7e9274da289a5cac
 import api from '../../services/api';
 import './styles.css';
 import mononoke from '../../assets/mononoke.png';
 
 
 export default function Home(){
-<<<<<<< HEAD
-=======
-
-    
->>>>>>> f309b4ef163001ae6b97febd7e9274da289a5cac
     
     const [name, setName] = useState('');
     const [title, setTitle] = useState('');
@@ -31,21 +23,13 @@ export default function Home(){
     const history = useHistory();
     const alert = useAlert();
 
-    const userName = localStorage.getItem('userName');
+    const userName = localStorage.getItem('username');
     const visible = document.getElementById('visible');
     
 
-    async function handleHome(){
+    async function handleHome(e){
        try{
-
-        const token = localStorage.getItem(token)
-        await api.post('/user/auth', token).then((authRes) => {
-        if(authRes == "Forbidden") {
-            history.push('/')
-            }
-        }, (error) => console.log(error))
-
-
+           e.preventDefault();
         const res = await api.get('https://ghibliapi.herokuapp.com/films');
         const filmes = res.data;
 
@@ -58,6 +42,7 @@ export default function Home(){
         setRelease(response[0].release_date);
         setName('');
         visible.style.display = 'block';
+        
        } catch(err){
         alert.show("Dica: Princess Mononoke, Castle in the Sky e outros", {
             title: "Tente novamente: filme não encontrado!"
@@ -71,6 +56,7 @@ export default function Home(){
         return(
             
             <div className="home-container">
+                
                 <header>
                      <span>Bem vindo(a), {userName}</span>
     
@@ -82,8 +68,9 @@ export default function Home(){
                                 label: 'Sim',
                             
                                  onClick: () => {
-                                     history.push('/')
-                                    localStorage.removeItem('token') 
+                                    localStorage.removeItem('token')
+                                    localStorage.removeItem('username')
+                                    history.push('/') 
                                 } 
                             },
                             {
@@ -95,32 +82,33 @@ export default function Home(){
                         <FiLogOut size={25} color="#5F5D57"/>
                      </button>
                 </header>
+
+                
     
-                <div id='paragrafo'>
-                    <p> Nesta aplicação, disponibilizamos para você a pesquisa dos filmes do Studio Ghibli. 
-                        Para iniciar, pesquise pelo nome do filme e as informações aparecerão em seguida.</p>
+                    <div id='paragrafo'>
+                         <p> Nesta aplicação, disponibilizamos para você a pesquisa dos filmes do Studio Ghibli. 
+                             Para iniciar, pesquise pelo nome do filme e as informações aparecerão em seguida.</p>
                     
-                </div>
+                     </div>
     
                 <div id='search'>
     
                     <div id='search-box'>
-                
-                    <input onSubmit={handleHome}
+                    <form onSubmit={handleHome}>
+                      <input 
                         placeholder="Digite aqui" 
                         value={name}
                         onChange={e => setName(e.target.value)}
                     /> 
                      
     
-                    <button onClick={handleHome}>
+                    <button type = "submit" onClick={handleHome}>
                         <FiSearch size={25} color="#000"/>    
                     </button> 
-    
-                    </div>
-                     
-                    <img src={mononoke} alt = "Ghibli" id="mono" />
-    
+                    </form>
+ 
+                     </div>
+                     <img src={mononoke} alt = "Ghibli" id="mono" />   
                 </div>
                   
     

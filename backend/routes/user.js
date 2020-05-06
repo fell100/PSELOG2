@@ -19,27 +19,33 @@ router.route('/add').post(async (req, res) => {
 
         if(!user){
             newUser.save()
-                .then(() => res.json('Usuário cadastrado com sucesso'))
-                .catch(err => res.status(400).json('Error: ' + err))
+                .then((result) => {
+                    const tokenData = { id: result._id}
+                    const userN = result.username;
+                    let generatedToken = jwt.sign(tokenData, 'somepass', {expiresIn: '30m'})
+                    res.json({ token: generatedToken, username: userN })
+                }
+                )    
+                .catch(err => res.status(400).json('Erro no cadastro, tente novamente'))
             
         } else {
-            res.json("Usuário ja existe!!")
+            res.status(400).json("Usuário ja existe!!")
         }
 });
 
 router.route('/login').post(async (req, res) => {
     
     const user = await User.findOne({username: req.body.username})
-    console.log(user);
+    
     if(!user) {
         return res.status(400).send('User not found')
     }
     try{
         if(await bcrypt.compare(req.body.password, user.password)){
-
-            let tokenData = { id: 101}
+            const userN = user.username;
+            const tokenData = { id: user._id}
             let generatedToken = jwt.sign(tokenData, 'somepass', {expiresIn: '30m'})
-            res.json({ token: generatedToken })
+            res.json({ token: generatedToken, username: userN })
             
             
         } else {

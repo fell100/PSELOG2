@@ -25,12 +25,18 @@ export default function Register(){
         }
 
         try{
-            const response = await api.post('user/add', data)
-            
-            alert.show(response.data);
-            history.goBack();
+            const res = await api.post('user/add', data)
+            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('username', res.data.username);
+
+            alert.show('Cadastro feito',{
+                onClose: () => {
+                    history.push('/home')
+                }
+            })
         }catch(err){
-            alert.show('Erro no cadastro, tente novamente');
+            setUser('');
+            alert.show(err.response.data);
         }
     }
     
