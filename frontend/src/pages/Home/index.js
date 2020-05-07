@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import {useHistory} from 'react-router-dom';
 import {FiSearch } from 'react-icons/fi'
 import {FiLogOut} from 'react-icons/fi';
@@ -19,13 +19,28 @@ export default function Home(){
     const [director, setDirector] = useState('');
     const [producer, setProducer] = useState('');
     const [release, setRelease] = useState('');
+    const [incidents, setIncidents] = useState([]);
+    
 
     const history = useHistory();
     const alert = useAlert();
 
     const userName = localStorage.getItem('username');
     const visible = document.getElementById('visible');
-    
+
+    useEffect(() => {
+         api.get('https://ghibliapi.herokuapp.com/films', )
+        .then(res => {
+            setIncidents(res.data.map( (movie) => {
+                const dados={
+                    id: movie.id,
+                    title: movie.title,
+                }
+                return dados;
+                }));
+            
+        })
+    },[]);
 
     async function handleHome(e){
        try{
@@ -87,7 +102,7 @@ export default function Home(){
     
                     <div id='paragrafo'>
                          <p> Nesta aplicação, disponibilizamos para você a pesquisa dos filmes do Studio Ghibli. 
-                             Para iniciar, pesquise pelo nome do filme e as informações aparecerão em seguida.</p>
+                             Para iniciar, pesquise pelo nome do filme desejado e as informações aparecerão em seguida.</p>
                     
                      </div>
     
@@ -121,7 +136,20 @@ export default function Home(){
                     <li><b>Descrição:</b> {description}</li>
                  </ul>
                 </div>
+
+                <div id="title">
+                    <ul>
+                    <h1 id="titulo">Títulos:</h1>
+                        {incidents.map(films =>(
+                            <li key={films.id}>{films.title}</li>
+                        ))}
+                    </ul>
+                    
+                </div>        
+
             </div>
+
+            
     
         );
 }

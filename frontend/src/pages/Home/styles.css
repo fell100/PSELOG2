@@ -54,6 +54,17 @@
     left: 1090px;
 }
 
+#title{
+    position: absolute;
+    top: 340px;
+    padding: 1%;
+    background: #EDE1B7 ;
+}
+#titulo{
+    font-family: 'Questrial', sans-serif;
+    font-size: 30px;
+}
+
 #visible{
     width: 50%;
     padding:1%;
